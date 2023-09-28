@@ -1,0 +1,12 @@
+.balance {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
