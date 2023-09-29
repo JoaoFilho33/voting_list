@@ -1,5 +1,3 @@
-// src/App.tsx
-import React from 'react';
 import TopicList from './components/TopicList';
 import './App.css';
 import { Topic as TopicType } from '../src/components/types';
