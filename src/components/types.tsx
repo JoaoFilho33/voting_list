@@ -17,14 +17,3 @@ export type Topic = {
         down: number;
     };
 };
-
-
-// base para registrar voto 
-export type VoteType = 'UP' | 'DOWN'
-
-export type Vote = {
-    id: string;
-    topico_id: string;
-    tipo: VoteType;
-    created_at: Date;
-}

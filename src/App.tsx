@@ -8,13 +8,21 @@ const topics: TopicType[] = [
   {
     id: '1',
     descricao: 'Pascal é uma excelente linguagem para algoritmos!',
-    autor: { nome: 'Osires Filho', cidade: 'Exemploville', pais: 'Exemplostan' },
+    autor: { nome: 'Osires Filho', cidade: 'Massachusetts', pais: 'Tuntun' },
     created_at: new Date(),
     tags: ['algoritmo', 'Pascal'],
     active: true,
-    votes: { up: 0, down: 0 },
+    votes: { up: 0, down: 0},
   },
-  // Adicione mais tópicos aqui conforme necessário
+  {
+    id: '1',
+    descricao: 'Pascal é uma excelente linguagem para algoritmos!',
+    autor: { nome: 'Osires Filho', cidade: 'Massachusetts', pais: 'Tuntun' },
+    created_at: new Date(),
+    tags: ['algoritmo', 'Pascal'],
+    active: true,
+    votes: { up: 0, down: 0},
+  },
 ];
 
 function App() {

@@ -1,0 +1,17 @@
+.dislike-button {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.dislike-button {
+    background-color: #ff0000;
+}
+
+.dislike-button:hover {
+    background-color: #333;
+}

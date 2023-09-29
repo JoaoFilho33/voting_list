@@ -1,12 +1,33 @@
-.balance {
+/* .balance {
     font-weight: bold;
     padding: 5px;
-}
+    font-size: 18px;
+    text-align: center;
+} */
 
-.positive {
+/* .positive {
     color: green;
 }
 
 .negative {
     color: red;
+} */
+
+.progress-bar {
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
 }
+
+.container-progresso {
+    width: 200px;
+    height: 20px;
+    background-color: red;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progresso {
+    height: 100%;
+}
+  
