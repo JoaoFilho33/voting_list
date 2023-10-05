@@ -11,7 +11,7 @@ const DislikeButtonComponent: React.FC<DislikeButtonProps> = ({ onVote, votes })
     return (
         <div className='dislike-button'>
             <FaThumbsDown className='thumb-icon' onClick={onVote} />
-            <span className='vote-count'>{votes.down}</span>
+            <span>{votes.down}</span>
         </div>
     );
 };
