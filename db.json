@@ -1,0 +1,221 @@
+{
+  "topics": [
+    {
+      "id": "uuidv4()",
+      "descricao": "Pascal é uma excelente linguagem para algoritmos!",
+      "autor": {
+        "nome": "Osires Filho",
+        "cidade": "Massachusetts",
+        "pais": "Tuntun"
+      },
+      "created_at": "2023-10-05T12:00:00.000Z",
+      "tags": [
+        "algoritmo",
+        "Pascal"
+      ],
+      "active": true,
+      "votes": {
+        "up": 12,
+        "down": 7
+      }
+    },
+    {
+      "id": "uuidv4()",
+      "descricao": "Pascal é uma excelente linguagem para algoritmos!",
+      "autor": {
+        "nome": "Osires Filho",
+        "cidade": "Massachusetts",
+        "pais": "Tuntun"
+      },
+      "created_at": "2023-10-05T12:00:00.000Z",
+      "tags": [
+        "algoritmo",
+        "Pascal"
+      ],
+      "active": true,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "eec3560e-c38e-4f81-b4c3-bde7854cf2fc",
+      "descricao": "O mundo é um moinho",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:21:35.075Z",
+      "tags": [
+        "Musica",
+        "boa",
+        "Cartola"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "01HBZ1H2F9JFR88KFNKWG9DK7Z",
+      "descricao": "O mundo é um moinho",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:28:55.657Z",
+      "tags": [
+        "Musica",
+        "boa",
+        "Cartola"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "0c0b5dab-87de-403c-81bc-8d6b216037af",
+      "descricao": "O mundo é um moinho",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:33:46.485Z",
+      "tags": [
+        "Musica",
+        "boa",
+        "Cartola"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "c40f8e67-8dc0-41ee-b0fd-ac05e150b459",
+      "descricao": "O mundo é um moinho",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:35:49.427Z",
+      "tags": [
+        "Musica",
+        "boa",
+        "Cartola"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "bca8e2fb-fcd0-469f-8af2-7de04b082141",
+      "descricao": "ola",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:36:25.392Z",
+      "tags": [
+        "aviao",
+        "doce"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "e28c3d12-0ad6-4d55-aa11-8e9314f0373a",
+      "descricao": "O mundo é um moinho",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:46:06.084Z",
+      "tags": [
+        "Musica",
+        "boa",
+        "Cartola"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "ff042bb4-6576-4efd-b9df-ba6dc52febe0",
+      "descricao": "O mundo é um moinho",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:46:48.898Z",
+      "tags": [
+        "Musica",
+        "boa",
+        "Cartola"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "3109f08a-9fbf-4784-ac83-a33a5e4d2079",
+      "descricao": "João de Deus",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:49:11.817Z",
+      "tags": [
+        "Teixeira",
+        "de",
+        "Almeida"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    },
+    {
+      "id": "f30e3934-a8dd-4363-8716-3936a01e6329",
+      "descricao": "Agora eu era herói",
+      "autor": {
+        "nome": "current_user",
+        "cidade": "sd",
+        "pais": "Massachusetts"
+      },
+      "created_at": "2023-10-05T04:58:48.117Z",
+      "tags": [
+        "João",
+        "e",
+        "Maria"
+      ],
+      "active": false,
+      "votes": {
+        "up": 10,
+        "down": 0
+      }
+    }
+  ]
+}

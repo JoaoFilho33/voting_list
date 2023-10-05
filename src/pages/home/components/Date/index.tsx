@@ -1,13 +1,14 @@
 import React from 'react';
-import './style.css'
+import './style.css';
 
 type DateInfoProps = {
     date: Date;
 };
 
-const Date: React.FC<DateInfoProps> = ({ date }) => {
-    const formattedDate = date.toLocaleDateString();
+const DateComponent: React.FC<DateInfoProps> = ({ date }) => {
+    // Verifica se a data é válida antes de chamar toLocaleDateString()
+    const formattedDate = date instanceof Date ? date.toLocaleDateString() : "Data inválida";
     return <div className='date'>Data: {formattedDate}</div>;
 };
 
-export default Date;
+export default DateComponent;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Topic as TopicType} from '../../../../core/interfaces/types';
+import { v4 as uuidv4 } from 'uuid';
+import { Topic as TopicType } from '../../../../core/interfaces/types';
 import Topic from '../Topic';
 import './style.css';
 
@@ -10,12 +11,11 @@ type TopicListProps = {
 };
 
 export const TopicList: React.FC<TopicListProps> = ({ topics, onDislike, onLike }) => {
-
-    console.log('Lista renderizada')
+    console.log('Lista renderizada');
     return (
         <div className="topic-list">
             {topics.map((topic) => (
-                <Topic key={topic.id} topic={topic} onLike={onLike} onDislike={onDislike} />
+                <Topic key={uuidv4()} topic={topic} onLike={onLike} onDislike={onDislike} />
             ))}
         </div>
     );

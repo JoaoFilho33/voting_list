@@ -1,54 +1,90 @@
-import { useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { TopicList } from "./components/TopicList"
+import { ActionType, TopicReducer } from "../../reducers/topicReducers";
+import { TopicList } from "./components/TopicList";
 import { TopicForm } from "./components/TopicForm";
 import { Topic } from "../../core/interfaces/types";
 
 export function TopicPage() {
-  const [topics, setTopics] = useState<Topic[]>([
-    {
+  const [{ topics }, dispatch] = useReducer(TopicReducer, { topics: [] });
+
+  useEffect(() => {
+    fetch('http://localhost:3001/topics')
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: ActionType.LOADED, payload: { topics: data } });
+      });
+  }, []);
+
+  const addTopic = async (text: Topic) => {
+    const newTopic: Topic = {
       id: uuidv4(),
-      descricao: 'Pascal é uma excelente linguagem para algoritmos!',
-      autor: { nome: 'Osires Filho', cidade: 'Massachusetts', pais: 'Tuntun' },
+      descricao: text.descricao,
+      autor: text.autor,
       created_at: new Date(),
-      tags: ['algoritmo', 'Pascal'],
-      active: true,
+      tags: text.tags,
+      active: false,
       votes: { up: 10, down: 0 },
-    },
-    {
-      id: uuidv4(),
-      descricao: 'O mundo é um moinho',
-      autor: { nome: 'Cartola', cidade: 'Rio de Janeiro', pais: 'Brasil' },
-      created_at: new Date(),
-      tags: ['Música', 'boa'],
-      active: true,
-      votes: { up: 0, down: 11 },
-    },
-  ]);
+    };
 
-  const handleAddTopic = (newTopic: Topic) => {
-    setTopics([...topics, newTopic]);
-  }
+    try {
+      const response = await fetch('http://localhost:3001/topics', {
+        method: 'POST',
+        body: JSON.stringify(newTopic),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-  const Like = (topicId: string) => {
-    const updatedTopics = topics.map((topic) =>
-      topic.id === topicId ? { ...topic, votes: { ...topic.votes, up: topic.votes.up + 1 } } : topic
-    );
-    setTopics(updatedTopics);
+      if (response.ok) {
+        console.log('Novo tópico adicionado com sucesso:', newTopic);
+        dispatch({ type: ActionType.ADDED, payload: { topic: newTopic } });
+      }
+    } catch (error) {
+      console.error('Erro ao adicionar novo tópico:', error);
+    }
   };
 
-  const Dislike = (topicId: string) => {
-    const updatedTopics = topics.map((topic) =>
-      topic.id === topicId ? { ...topic, votes: { ...topic.votes, down: topic.votes.down + 1 } } : topic
-    );
-    setTopics(updatedTopics);
+  const handleVote = async (topicId: string, voteType: 'up' | 'down') => {
+    const updatedTopics = topics.map((topic: Topic) => {
+      if (topic.id === topicId) {
+        return {
+          ...topic,
+          votes: {
+            ...topic.votes,
+            [voteType]: topic.votes[voteType] + 1
+          }
+        };
+      }
+      return topic;
+    });
+
+    const topicToUpdate = updatedTopics.find((topic: Topic) => topic.id === topicId);
+
+    if (topicToUpdate) {
+      try {
+        const response = await fetch(`http://localhost:3001/topics/${topicId}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ votes: topicToUpdate.votes }),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          console.log('Voto registrado com sucesso para o tópico:', topicId);
+          dispatch({ type: ActionType.UPDATED, payload: { topic: topicToUpdate } });
+        }
+      } catch (error) {
+        console.error('Erro ao registrar voto:', error);
+      }
+    }
   };
 
-  return (  
+  return (
     <>
-      <TopicForm onAdd={handleAddTopic} />
-      <TopicList topics={topics} onLike={Like} onDislike={Dislike} />
+      <TopicForm onAdd={addTopic} />
+      <TopicList topics={topics} onLike={topicId => handleVote(topicId, 'up')} onDislike={topicId => handleVote(topicId, 'down')} />
     </>
-  )
-
+  );
 }
